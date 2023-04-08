@@ -1,0 +1,253 @@
+/*  Fonts */
+
+@font-face {
+  font-family: "Suisse Int'l";
+  src: url("../../inc/fonts/Suisselntl-Regular.ttf");
+}
+
+/*  Mixins  */
+
+@mixin onTablet {
+  @media screen and (max-width: 998px){
+    @content;
+  }
+}
+
+/*  Page  */
+
+.page {
+  font-family: "Suisse Int'l", sans-serif;
+
+  &__body {
+    margin: 0;
+  }
+}
+
+/*  Container  */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+
+/*  Logo Section  */
+
+.logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  &__img {
+    display: flex;
+    width: 400px;
+    max-height: 70px;
+    height: 100%;
+
+    @include onTablet {
+      width: 300px;
+      max-height: 60px;
+    }
+  }
+}
+
+
+/*  Open Position Section  */
+
+.open-position {
+  margin: 110px 0 72px;
+
+  @include onTablet {
+    margin: 80px 10px 60px 10px;
+  }
+
+  &__block {
+    background-color: #f4f4f4;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 43px;
+    text-transform: uppercase;
+    background-color: #000055;
+    color: #fff;
+    margin: 0 0 22px;
+    padding: 34px 30px;
+
+    @include onTablet {
+      font-size: 18px;
+      text-align: center;
+      padding: 24px ;
+    }
+  }
+
+  &__select {
+    font-family: "Suisse Int'l" , sans-serif;
+    border: none;
+    margin: 0 0 28px 25px;
+    width:  280px;
+    padding: 7px 16px;
+    outline:  none;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color: #a1a1a1;
+    border-radius: 4px;
+
+    @include onTablet {
+      width:  max-content;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__posts {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+    margin: 0 25px 30px 25px;
+  }
+
+  &__post {
+    grid-column: 1 / 7;
+    background-color: #fff;
+    padding: 24px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: all ease 0.3s;
+
+    @include onTablet {
+      grid-column: 1 / 13;
+    }
+
+    &:nth-child(2n) {
+      grid-column: 7 / 13;
+
+      @include  onTablet {
+        grid-column: 1 / 13;
+      }
+    }
+
+    &:hover {
+      border: 1px solid #05C48A;
+      cursor: pointer;
+    }
+
+    &-title {
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 30px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #000055;
+      margin: 0 0 16px;
+
+      @include onTablet {
+        font-size: 15px;
+      }
+    }
+  }
+
+  &__post-link {
+    text-decoration: none;
+  }
+
+  &__post-items {
+    display:  flex;
+    margin: 0 0 17px;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__post-item {
+    display: flex;
+    margin-right: 20px;
+
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &-img {
+      margin-right: 15px;
+    }
+
+    &-text {
+      font-size: 14px;
+      line-height: 24px;
+      color: #000055;
+      margin: 0;
+    }
+  }
+}
+
+.learn-more {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 28px;
+  text-transform: uppercase;
+  color: #000055;
+  width: max-content;
+
+  &__img {
+    margin-left: 10px;
+  }
+}
+
+
+/*  Pagination  */
+.pagination {
+  display:  flex;
+  justify-content: end;
+  align-items: center;
+  width: 100%;
+}
+
+.pagination_2 {
+  display:  flex;
+  justify-content: end;
+  align-items: center;
+  width: 100%;
+}
+
+.page-numbers {
+  display:  flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 45px;
+  background-color: #E8E8E8;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  text-align: center;
+  color: #000055;
+  text-decoration: none;
+}
+
+.page-numbers.current {
+  color: #E8E8E8;
+  background-color: #000055;
+}
+
+.loadmore {
+  grid-column: 5 / 9;
+  background-color: #0A246A;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  border-radius: 4px;
+
+  @include onTablet {
+    grid-column: 2 / 12;
+  }
+}
